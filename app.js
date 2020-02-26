@@ -1,6 +1,6 @@
 const request = require("request");
 
-const url = 'https://api.darksky.net/forecast/42f4f0b7f630aa1fff073d24ef993013/37.8267,-122.4233';
+const url = 'https://api.darksky.net/forecast/42f4f0b7f630aa1fff073d24ef993013/37.8267,-122.4233?key=value&otherKey=otherValue';
 
 request({ url: url, json: true}, (error,response) => {
     let temp = response.body.currently.temperature;
@@ -9,8 +9,3 @@ request({ url: url, json: true}, (error,response) => {
 
 
 })
-
-// Goal is to print a small forecast to the User
-//
-// 1. Print: "It is currently 58.55 degrees out. There is a o% chance of rain."
-// Test your work!
