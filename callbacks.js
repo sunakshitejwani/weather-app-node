@@ -9,9 +9,10 @@ const geocode = (address, callback) => {
         latitude:0,
         longitude:0
     }
-    return data;// this doesn't return
+    callback(data) // send data the callback, and then callback is called in geocode
    }, 2000)
-}//problem is return statements don't work in the async calls
+}
 
-const data = geocode('Philadelphia');
-console.log(data);
+geocode('Philadelphia', (data) => {
+    console.log(data);
+}); // geocode is not going to have direct return value
