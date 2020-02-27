@@ -5,6 +5,8 @@ const url = 'https://api.darksky.net/forecast/42f4f0b7f630aa1fff073d24ef993013/3
 request({ url: url, json: true}, (error,response) => {
     if(error){
         console.log("unable to connect to Weather Service!");
+    } else if (response.body.error) {
+        console.log("Unable to find the location");
     } else {
         let temp = response.body.currently.temperature;
         let rainProb = response.body.currently.precipProbability;
